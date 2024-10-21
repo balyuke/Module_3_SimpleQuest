@@ -1,0 +1,13 @@
+body {
+    background-image: url('img/cosmos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#wrapper, h1, ::placeholder {
+    text-align: center;
+}
+h1, title, h3, p, #enterName {
+    background-color: lightgrey;
+}
