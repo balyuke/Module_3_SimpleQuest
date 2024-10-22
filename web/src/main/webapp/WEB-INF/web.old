@@ -11,7 +11,7 @@
 
   <servlet>
     <servlet-name>questServlet</servlet-name>
-    <servlet-class>com.javarush.balyuke.simplequest.web.controllers.QuestServlet</servlet-class>
+    <servlet-class>com.javarush.balyuke.simplequest.controllers.QuestServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -21,7 +21,7 @@
 
   <servlet>
     <servlet-name>authorizationServlet</servlet-name>
-    <servlet-class>com.javarush.balyuke.simplequest.web.controllers.AuthServlet</servlet-class>
+    <servlet-class>com.javarush.balyuke.simplequest.controllers.AuthServlet</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>
   <servlet-mapping>
