@@ -14,7 +14,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
-public class Repository {
+public class RepositoryQuiz {
 
     private JsonObject jsonObject;
 
@@ -22,7 +22,7 @@ public class Repository {
     private static final Map<Integer, Question> QUESTIONS = new HashMap<>();
     private static final Map<Integer, Answer> ANSWERS = new HashMap<>();
 
-    public Repository() {
+    public RepositoryQuiz() {
 
         Quest quest1 = new Quest(101
                 , "НЛО"

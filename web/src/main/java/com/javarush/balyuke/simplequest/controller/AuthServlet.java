@@ -1,11 +1,17 @@
 package com.javarush.balyuke.simplequest.controller;
 
 import java.io.IOException;
+
+import com.javarush.balyuke.simplequest.servlet.TestDBServlet;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @WebServlet("/auth")
 public class AuthServlet extends HttpServlet {
+
+    private static final Logger log = LogManager.getLogger(AuthServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -35,9 +41,10 @@ public class AuthServlet extends HttpServlet {
             resp.addCookie(cookie);
         }
 
-        HttpSession session = req.getSession(true);
+        HttpSession session = req.getSession(true); // req.getSession();
         String name = req.getParameter("name");
         session.setAttribute("name", name);
+        log.info("Пользователь {} начал игру",name);
         resp.sendRedirect(req.getContextPath() + "/quest");
     }
 }

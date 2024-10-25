@@ -14,6 +14,7 @@ import java.util.Collection;
 public class QuestServlet extends HttpServlet {
 
     private final Repository repository = new Repository();
+    private final int defaultIdQuestion = 201;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -22,7 +23,7 @@ public class QuestServlet extends HttpServlet {
         if (answerId != null) {
             question = repository.getAnswerById(Integer.parseInt(answerId)).getTo();
         } else {
-            question = repository.getQuestionById(1);
+            question = repository.getQuestionById(defaultIdQuestion);
         }
         Collection<Answer> answers = repository.getAnswersByFromQuestionId(question.getId());
         request.setAttribute("question", question);
@@ -32,12 +33,12 @@ public class QuestServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         doGet(request, response);
     }
 
     private void addStatistics(HttpServletRequest request) {
-        request.setAttribute("ip", request.getRemoteAddr());
+        request.setAttribute("ip", request.getRemoteAddr());        // не работает как надо
 
         HttpSession session = request.getSession();
         request.setAttribute("userName", session.getAttribute("name"));

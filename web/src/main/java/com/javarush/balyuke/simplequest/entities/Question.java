@@ -11,7 +11,6 @@ public class Question extends AbstractEntity {
     }
 
     public Quest getQuest() { return quest; }
-
     public void setQuest(Quest quest) {
         this.quest = quest;
     }
@@ -19,13 +18,12 @@ public class Question extends AbstractEntity {
     public Type getType() {
         return type;
     }
-
     public void setType(Type type) {
         this.type = type;
     }
 
     public enum Type {
-        USUAL,
+        CONTINUE,
         WON,
         LOST
     }

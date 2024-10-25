@@ -1,9 +1,9 @@
 package com.javarush.balyuke.simplequest.entities;
 
 public class Answer extends AbstractEntity {
+
     private Quest quest;
     private Question from;
-
     private Question to;
 
     public Answer(Integer id, String content, Quest quest, Question from, Question to) {
@@ -13,10 +13,14 @@ public class Answer extends AbstractEntity {
         this.to = to;
     }
 
+    public Quest getQuest() { return quest; }
+    public void setQuest(Quest quest) {
+        this.quest = quest;
+    }
+
     public Question getFrom() {
         return from;
     }
-
     public void setFrom(Question from) {
         this.from = from;
     }
@@ -24,7 +28,6 @@ public class Answer extends AbstractEntity {
     public Question getTo() {
         return to;
     }
-
     public void setTo(Question to) {
         this.to = to;
     }
